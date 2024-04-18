@@ -22,7 +22,7 @@ const products=[
     { name: 'Shoes', price: 60, category: 'Clothing' },  
 
 ];
-function groupByCategory(products) {
+function groupCategory(products) {
   return products.reduce((acc, product) => {
      const { category } = product;
      if (!acc[category]) {
@@ -43,14 +43,14 @@ function groupByCategory(products) {
   { name: 'Jim', scores: [70, 80, 75] },
   { name: 'Jill', scores: [85, 90, 84] },
 ];
-function getStudentsWithHighAverage(students) {
+function Average(students) {
   return students.filter(student => {
      const averageScore = student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length;
      return averageScore >= 85;
   }).map(student => student.name);
  }
- const highAverageStudents = getStudentsWithHighAverage(students);
- console.log(highAverageStudents);
+ const AverageStudents = Average(students);
+ console.log(AverageStudents);
 
 
 // 4.Given an object representing a car, with properties for the make, model, year,
@@ -60,23 +60,15 @@ function getStudentsWithHighAverage(students) {
 const car = {
   make: 'Toyota',
   model: 'prado',
-  year: 2024,
-  displayInfo: function() {
-    console.log(`Make: ${this.make}, Model: ${this.model}, Year: ${this.year}`);
-  },
-};
-      
-       car.age = function() {
-        const currentYear = new Date().getFullYear();
-        return currentYear - this.year;
-       };
-      
-       console.log(car.age());
- car.age = function() {
-  const currentYear = new Date().getFullYear();
-  return currentYear - this.year;
- };
- console.log(car.age());
+  year: 2003,
+  age:function() {
+    let  currentYear = new Date().getFullYear();
+     let carAge= currentYear - car.year;
+     return carAge
+   }
+   };
+   console.log(car.age());
+ 
 
 
 
