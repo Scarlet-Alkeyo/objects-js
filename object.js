@@ -43,13 +43,13 @@ function groupCategory(products) {
   { name: 'Jim', scores: [70, 80, 75] },
   { name: 'Jill', scores: [85, 90, 84] },
 ];
-function Average(students) {
+function Averagescores(students) {
   return students.filter(student => {
      const averageScore = student.scores.reduce((sum, score) => sum + score, 0) / student.scores.length;
      return averageScore >= 85;
   }).map(student => student.name);
  }
- const AverageStudents = Average(students);
+ const AverageStudents = Averagescores(students);
  console.log(AverageStudents);
 
 
